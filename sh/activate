@@ -1,0 +1,18 @@
+# ###############################################################
+# SECTION: SETUP
+# ###############################################################
+
+# Set home path
+export ESDOC_ARCHIVE_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export ESDOC_ARCHIVE_HOME="$( cd "$( dirname "${ESDOC_ARCHIVE_HOME[0]}" )" && pwd )"
+
+# Ensure shell scripts are executable.
+chmod a+x $ESDOC_ARCHIVE_HOME/sh/*.sh
+
+# ###############################################################
+# SECTION: ALIASES
+# ###############################################################
+
+alias esdoc-archive-compress=$ESDOC_ARCHIVE_HOME/sh/compress.sh
+alias esdoc-archive-uncompress=$ESDOC_ARCHIVE_HOME/sh/uncompress.sh
+alias esdoc-archive-delete-documents=$ESDOC_ARCHIVE_HOME/sh/delete_documents.sh
