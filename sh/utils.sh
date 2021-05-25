@@ -3,20 +3,24 @@
 # Wraps standard echo by adding application prefix.
 log()
 {
-	declare now=`date +%Y-%m-%dT%H:%M:%S`
-	declare tabs=''
+	local NOW
+	local TABS
+
+	NOW=$(date +%Y-%m-%dT%H:%M:%S:000000)
+	TABS=''
+
 	if [ "$1" ]; then
 		if [ "$2" ]; then
 			for ((i=0; i<$2; i++))
 			do
-				declare tabs+='\t'
+				TABS+='\t'
 			done
-	    	echo -e $now" [INFO] :: ESDOC-ARCHIVE > "$tabs$1
+	    	echo -e "$NOW [INFO] :: ARCHIVE :: $TABS$1"
 	    else
-	    	echo -e $now" [INFO] :: ESDOC-ARCHIVE > "$1
+	    	echo -e "$NOW [INFO] :: ARCHIVE :: $1"
 	    fi
 	else
-	    echo -e $now" [INFO] :: ESDOC-ARCHIVE > "
+	    echo -e "$NOW [INFO] :: ARCHIVE :: "
 	fi
 }
 
